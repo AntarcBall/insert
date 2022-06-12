@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영어본문복습</title>
+</head>
+<body>
+    <pre id="dd">
+What Is Soda Doing to You?
+When you eat fast food, such as pizza, hamburger, or fried chicken, what do you drink with it?
+ Most people have a soda.
+ When you go to the movies or when you just want something refreshing to satisfy your thirst, a soda is often the first choice.
+Soda, also called a soft drink, is a sweet drink with carbonation.
+ People all over the world love sodas.
+ Every year, Americans consume 170 liters of soda per person, and the British 100 liters.
+ Of all age groups, teenagers drink the most soda.
+ Most people, however, understand that sodas are not good for their health due to the ingredients.
+ What is in a soda?
+ Which ingredients are really not good for you?
+Sugar
+Everyone knows that soft drinks are loaded with large amounts of sugar.
+ A typical 250ml can of soda contains 30 grams of sugar.
+ WHO, the World Health Organization, recommends that people consume less than 25 grams of sugar a day.
+ Therefore, if you drink one small can of soda, your daily sugar intake already exceeds the recommended amount.
+ What is worse, people usually don’t stop with one can.
+ Having extra sugar means adding unnecessary calories.
+ Over time, this can lead to obesity and other health problems, such as heart disease and diabetes.
+ Even diet sodas are not safe.
+ Diet sodas replace the sugar with artificial sweeteners.
+ Artificial sweeteners provide a sweet, sugary taste with fewer calories.
+ This may seem like a good thing, but it really isn’t.
+ According to a recent study, artificial sweeteners make you want more sweet foods.
+ This means that you may easily gain weight if you keep drinking diet soda.
+ In addition, artificial sweeteners are known to generate headaches, emotional disorders, and sleeping problems.
+Acid
+Most soda contains several types of acids.
+ Acid is a chemical substance with a sour taste.
+ When added to water, it produces a sharp flavor.
+ Acid also delays the growth of bacteria, which extends the expiration date of a product.
+ However, acid interferes with the body’s ability to absorb calcium, and as a result, bone softening occurs.
+ Also, the acid in sodas interacts with stomach acid, slowing digestion and blocking nutrient absorption.
+ Furthermore, it can damage tooth enamel, the hard substance that protects your teeth.
+ If you drink sodas regularly, your teeth decay more easily.
+Caffeine
+When you hear the word “caffeine,” you most likely think ofcoffee.
+ But some sodas, especially colas and carbonated energy drinks, also contain caffeine.
+ Caffeine makes you feel more awake, but it may bring about an irregular heartbeat.
+ A single can of cola may not affect you much, but if you consume colas regularly, they can make you feel more nervous and keep you from sleeping well at night.     
+Artificial Colors and Artificial Flavors
+Soft drink companies attract consumers by adding bright colors and sweet flavors to their products.
+ Most of these colors and flavors, however, are not natural.
+ They are artificial chemicals.
+ For example, the artificial color Yellow No.
+ 6, used in some pineapple juices, adds nothing to the taste.
+ It is just there to make the drink look pretty.
+ Also, the artificial flavor that gives the drink its pineapple taste is not real pineapple juice at all.
+ Studies have shown that excessive consumption of these kinds of chemicals can create problems such as kidney disease and ADHD.
+You can see how the sugar, the acid, the caffeine, and theartificial chemicals in sodas are really not good for you.
+ Perhaps you might now understand that you should stop drinking them.
+ However, if quitting sodas altogether sounds too difficult, cut down gradually.
+ For example, replace one regular soft drink or one diet soda per day with another more healthy drink.
+ Of course, the best choice would be water.
+ Water has no calories, no acid, no caffeine, and no chemicals of any kind.
+ And if you want something to add a boost of flavor, put a slice of lemon in the water.
+ If you can’t break your soda drinking habits in a short period of time, don’t be too hard on yourself.
+ Once you start cutting back, you are heading in the right direction.
+    </pre>
+    <p></p>
+    <div id="sentence"></div>
+    이 문장이 어디에 들어가야 할까요?
+    <button id="btn">답이 뭐죠?</button>
+    <script>
+        function rand(a){
+            return Math.ceil(Math.random()*a)
+        }
+        function add(text){
+            context.innerHTML = context.innerHTML + text +'\n'
+        }
+        btn = document.getElementById('btn')
+        btn.addEventListener('click',function(){
+            context.innerHTML = ''
+            for(i in stcs){
+                if (i> where + frontlength|| i< where - (7-frontlength)) continue
+                if ( where == i ){
+                    add('★Here★') 
+
+                }else add(stcs[i])
+                
+        }
+        })
+        context = document.getElementById('dd')
+        picked = document.getElementById('sentence')
+        stcs = context.innerHTML.split('\n')
+        where = rand(20) +5
+        picked.innerHTML= stcs[where]
+        frontlength = rand(7)+1
+        context.innerHTML = ''
+        for(i in stcs){
+            if (i> where + frontlength|| i< where - (7-frontlength)) continue
+            if ( where == i ) continue
+            add(stcs[i])
+        }
+        
+    </script>
+</body>
+</html>
